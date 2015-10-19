@@ -9,9 +9,17 @@ public class FizzBuzzTest {
 
     @Test
     public void sayTheNumber() {
-        FizzBuzz fizzBuzz = FizzBuzzFactory.create();
+        FizzBuzz fizzBuzz = FizzBuzzSetup.create();
 
         assertThat(fizzBuzz.say(1), equalTo("1"));
         assertThat(fizzBuzz.say(2), equalTo("2"));
+    }
+
+    @Test
+    public void sayFizz() {
+        FizzBuzz fizzBuzz = FizzBuzzSetup.create();
+
+        assertThat(fizzBuzz.say(3), equalTo("Fizz"));
+        assertThat(fizzBuzz.say(6), equalTo("Fizz"));
     }
 }
