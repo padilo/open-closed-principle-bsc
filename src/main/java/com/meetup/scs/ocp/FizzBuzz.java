@@ -1,5 +1,6 @@
 package com.meetup.scs.ocp;
 
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FizzBuzz {
@@ -10,10 +11,11 @@ public class FizzBuzz {
     }
 
     public String say(int i) {
-        return Stream.of(rules)
+        String value = Stream.of(rules)
                 .filter(rule -> rule.canSay(i))
-                .findFirst()
                 .map(rule -> rule.say(i))
-                .orElse("???");
+                .collect(Collectors.joining());
+
+        return value.equals("")? String.valueOf(i): value;
     }
 }
