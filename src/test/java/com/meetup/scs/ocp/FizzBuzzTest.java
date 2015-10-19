@@ -45,4 +45,26 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz.say(7), equalTo("Bang"));
         assertThat(fizzBuzz.say(14), equalTo("Bang"));
     }
+
+    @Test
+    public void sayFizzBang() {
+        FizzBuzz fizzBuzz = FizzBuzzSetup.create();
+
+        assertThat(fizzBuzz.say(3*7), equalTo("FizzBang"));
+
+    }
+
+    @Test
+    public void sayBuzzBang() {
+        FizzBuzz fizzBuzz = FizzBuzzSetup.create();
+
+        assertThat(fizzBuzz.say(5*7), equalTo("BuzzBang"));
+    }
+
+    @Test
+    public void sayFizzBuzzBang() {
+        FizzBuzz fizzBuzz = FizzBuzzSetup.create();
+
+        assertThat(fizzBuzz.say(3*5*7), equalTo("FizzBuzzBang"));
+    }
 }
