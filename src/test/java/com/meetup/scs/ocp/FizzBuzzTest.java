@@ -22,4 +22,12 @@ public class FizzBuzzTest {
         assertThat(fizzBuzz.say(3), equalTo("Fizz"));
         assertThat(fizzBuzz.say(6), equalTo("Fizz"));
     }
+
+    @Test
+    public void sayBuzz() {
+        FizzBuzz fizzBuzz = FizzBuzzSetup.create();
+
+        assertThat(fizzBuzz.say(5), equalTo("Buzz"));
+        assertThat(fizzBuzz.say(10), equalTo("Buzz"));
+    }
 }
